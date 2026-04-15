@@ -624,7 +624,7 @@ tr:hover td {
   text-overflow: ellipsis;
 }
 
-.customize-panel button {
+.customize-panel button:not(.color-btn) {
   margin: 10px;
   padding: 10px 20px;
   border-radius: 18px;
@@ -678,4 +678,41 @@ tr:hover td {
 #player {
   position: absolute;
   top: -1000px;
+}
+
+#volume-slider {
+  width: 100%;
+  max-width: 200px;
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(148, 163, 184, 0.2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+}
+
+#volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+}
+
+#volume-slider::-moz-range-track {
+  background: transparent;
+  border: none;
 }
