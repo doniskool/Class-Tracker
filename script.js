@@ -270,7 +270,7 @@ colorBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const color = btn.dataset.color;
     // Change button colors
-    document.querySelectorAll('button, .support-button, .music-button, .customize-button').forEach(el => {
+    document.querySelectorAll('button:not(.color-btn), .support-button, .music-button, .customize-button').forEach(el => {
       el.style.background = `linear-gradient(135deg, ${color}, ${adjustColor(color, -50)})`;
     });
     localStorage.setItem('buttonColor', color);
@@ -303,7 +303,7 @@ resetBgBtn.addEventListener('click', () => {
 // Load saved customizations on page load
 const savedColor = localStorage.getItem('buttonColor');
 if (savedColor) {
-  document.querySelectorAll('button, .support-button, .music-button, .customize-button').forEach(el => {
+  document.querySelectorAll('button:not(.color-btn), .support-button, .music-button, .customize-button').forEach(el => {
     el.style.background = `linear-gradient(135deg, ${savedColor}, ${adjustColor(savedColor, -50)})`;
   });
 }

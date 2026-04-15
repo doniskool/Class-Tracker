@@ -624,7 +624,9 @@ tr:hover td {
   text-overflow: ellipsis;
 }
 
-.customize-panel button:not(.color-btn) {
+#background-btn,
+#reset-bg-btn,
+#close-customize {
   margin: 10px;
   padding: 10px 20px;
   border-radius: 18px;
