@@ -271,6 +271,14 @@ backgroundButton.addEventListener('click', () => {
   input.click();
 });
 
+// Reset background functionality
+const resetBgButton = document.getElementById('reset-bg-button');
+
+resetBgButton.addEventListener('click', () => {
+  document.body.style.backgroundImage = '';
+  localStorage.removeItem('backgroundImage');
+});
+
 // Load saved background on page load
 const savedBg = localStorage.getItem('backgroundImage');
 if (savedBg) {
