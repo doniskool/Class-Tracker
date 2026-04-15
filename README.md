@@ -11,7 +11,8 @@ A sleek grade tracking web app for recording classwork, homework, and average gr
 - Smooth bacterium-inspired background and button click sound effects
 - Background music player with playlist (Lofi, Let's larp, Romantical)
 - Custom background image uploader
-- Customer support contact
+- Customer support contact - send me music recommendations
+
 
 ## Usage
 
