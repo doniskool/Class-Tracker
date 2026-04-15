@@ -159,7 +159,7 @@ if (connectSchoolButton) {
 
 // Play a quiet click sound for every button or support link click.
 document.body.addEventListener('click', (event) => {
-  if (event.target.closest('button, .support-button, .music-button')) {
+  if (event.target.closest('button, .support-button, .music-button, .customize-button, .color-btn')) {
     playClickSound();
   }
 });
@@ -250,10 +250,34 @@ function onPlayerStateChange(event) {
   }
 }
 
-// Background change functionality
-const backgroundButton = document.getElementById('background-button');
+// Customize functionality
+const customizeButton = document.getElementById('customize-button');
+const customizeOverlay = document.getElementById('customize-overlay');
+const closeCustomize = document.getElementById('close-customize');
+const colorBtns = document.querySelectorAll('.color-btn');
+const backgroundBtn = document.getElementById('background-btn');
+const resetBgBtn = document.getElementById('reset-bg-btn');
 
-backgroundButton.addEventListener('click', () => {
+customizeButton.addEventListener('click', () => {
+  customizeOverlay.classList.remove('hidden');
+});
+
+closeCustomize.addEventListener('click', () => {
+  customizeOverlay.classList.add('hidden');
+});
+
+colorBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const color = btn.dataset.color;
+    // Change button colors
+    document.querySelectorAll('button, .support-button, .music-button, .customize-button').forEach(el => {
+      el.style.background = `linear-gradient(135deg, ${color}, ${adjustColor(color, -50)})`;
+    });
+    localStorage.setItem('buttonColor', color);
+  });
+});
+
+backgroundBtn.addEventListener('click', () => {
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = 'image/jpeg,image/png';
@@ -271,16 +295,33 @@ backgroundButton.addEventListener('click', () => {
   input.click();
 });
 
-// Reset background functionality
-const resetBgButton = document.getElementById('reset-bg-button');
-
-resetBgButton.addEventListener('click', () => {
+resetBgBtn.addEventListener('click', () => {
   document.body.style.backgroundImage = '';
   localStorage.removeItem('backgroundImage');
 });
 
-// Load saved background on page load
+// Load saved customizations on page load
+const savedColor = localStorage.getItem('buttonColor');
+if (savedColor) {
+  document.querySelectorAll('button, .support-button, .music-button, .customize-button').forEach(el => {
+    el.style.background = `linear-gradient(135deg, ${savedColor}, ${adjustColor(savedColor, -50)})`;
+  });
+}
+
 const savedBg = localStorage.getItem('backgroundImage');
 if (savedBg) {
   document.body.style.backgroundImage = `url(${savedBg})`;
+}
+
+function adjustColor(color, amount) {
+  const usePound = color[0] == '#';
+  const col = usePound ? color.slice(1) : color;
+  const num = parseInt(col, 16);
+  let r = (num >> 16) + amount;
+  let g = (num >> 8 & 0x00FF) + amount;
+  let b = (num & 0x0000FF) + amount;
+  r = r > 255 ? 255 : r < 0 ? 0 : r;
+  g = g > 255 ? 255 : g < 0 ? 0 : g;
+  b = b > 255 ? 255 : b < 0 ? 0 : b;
+  return (usePound ? '#' : '') + (r << 16 | g << 8 | b).toString(16);
 }

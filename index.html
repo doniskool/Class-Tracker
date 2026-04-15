@@ -135,8 +135,7 @@
   </div>
 
   <div id="music-button" class="music-button">💿</div>
-  <div id="background-button" class="background-button">Background</div>
-  <div id="reset-bg-button" class="reset-bg-button">🔄</div>
+  <div id="customize-button" class="customize-button">Customize</div>
 
   <div id="music-overlay" class="music-overlay hidden">
     <div class="music-player">
@@ -145,10 +144,37 @@
         <option value="cyzx45mupcQ">Lofi</option>
         <option value="jjfDkJHuCQo">Let's larp</option>
         <option value="N5X79UP5NpI">romantical</option>
+        <option value="6sfOgjM8wNE">Let Down</option>
+        <option value="9HLvgLjLlyE">Complexity of Life</option>
       </select>
       <button id="play-pause">Play</button>
       <input type="range" id="volume-slider" min="0" max="100" value="50">
       <button id="close-music">Close</button>
+    </div>
+  </div>
+
+  <div id="customize-overlay" class="customize-overlay hidden">
+    <div class="customize-panel">
+      <h3>Customize</h3>
+      <div class="customize-section">
+        <h4>Button Colors</h4>
+        <div class="color-options">
+          <div class="color-swatch"><button class="color-btn" data-color="#ff00ff" style="background-color: #ff00ff;" aria-label="Magenta"></button><span>Magenta</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#00ff00" style="background-color: #00ff00;" aria-label="Green"></button><span>Green</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#ffff00" style="background-color: #ffff00;" aria-label="Yellow"></button><span>Yellow</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#ff0000" style="background-color: #ff0000;" aria-label="Red"></button><span>Red</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#0000ff" style="background-color: #0000ff;" aria-label="Blue"></button><span>Blue</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#00ffff" style="background-color: #00ffff;" aria-label="Cyan"></button><span>Cyan</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#ff8000" style="background-color: #ff8000;" aria-label="Orange"></button><span>Orange</span></div>
+          <div class="color-swatch"><button class="color-btn" data-color="#8000ff" style="background-color: #8000ff;" aria-label="Purple"></button><span>Purple</span></div>
+        </div>
+      </div>
+      <div class="customize-section">
+        <h4>Background</h4>
+        <button id="background-btn">Change Background</button>
+        <button id="reset-bg-btn">Reset Background</button>
+      </div>
+      <button id="close-customize">Close</button>
     </div>
   </div>
 
