@@ -1,4 +1,4 @@
-# Classle-Trackle
+# Class-Tracker
 
 A sleek grade tracking web app for recording classwork, homework, and average grades.
 
