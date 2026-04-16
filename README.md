@@ -24,6 +24,4 @@ Enter your grades manually and watch the average update automatically.
 
 Click the spinning disk in the bottom-right to access the music player. Select a song, play/pause, and adjust volume.
 
-## Background Changer
-
-Click the "Background" button next to the music button to upload a JPEG or PNG image to change the site's background.
+##Customizaton GUI, for more versatiltiy and a sleeker look on the website.
