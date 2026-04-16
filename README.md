@@ -9,9 +9,10 @@ A sleek grade tracking web app for recording classwork, homework, and average gr
 - See counts for homework, classwork, and total entries
 - Remove individual entries or reset the tracker
 - Smooth bacterium-inspired background and button click sound effects
-- Background music player with playlist (Lofi, Let's larp, Romantical)
+- Background music player with playlist (Lofi, Let's larp, Romantical and more to come).
 - Custom background image uploader
 - Customer support contact - send me music recommendations
+- Completely client side, multiple people can use the website at the same time.
 
 
 ## Usage
